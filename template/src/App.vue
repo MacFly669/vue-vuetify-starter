@@ -100,7 +100,8 @@
       <v-container fluid>
         {{else}}
         <div id="app">
-          <img src="./assets/logo.png" alt="logo">
+          <span><img src="./assets/logo.png" alt="logo"></span>
+          <span><img src="./assets/v.png" alt="vuetify"></span>
         {{/vuetify}}
         {{#router}}
         <router-view/>
