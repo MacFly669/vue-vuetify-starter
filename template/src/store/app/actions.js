@@ -1,5 +1,7 @@
+{{#vuex}}
 const actions = {
 
-}
+}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-export default actions
+export default actions{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuex}}

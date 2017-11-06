@@ -8,21 +8,21 @@ import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 {{#vuex}}
-import store from './store'{{#if_eq lintConfig "vuex"}};{{/if_eq}}
+import store from './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 
 {{#axios}}
-import axios from 'axios'{{#if_eq lintConfig "axios"}};{{/if_eq}}
+import axios from 'axios'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/axios}}
 {{#vuetify}}
-import Vuetify from 'vuetify'{{#if_eq lintConfig "vuetify"}};{{/if_eq}}
+import Vuetify from 'vuetify'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuetify}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-Vue.use(Vuetify){{#if_eq lintConfig "vuetify"}};{{/if_eq}}
+Vue.use(Vuetify){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#axios}}
-Vue.prototype.$_axios = axios{{#if_eq lintConfig "axios"}};{{/if_eq}}
+Vue.prototype.$_axios = axios{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/axios}}
 
 /* eslint-disable no-new */

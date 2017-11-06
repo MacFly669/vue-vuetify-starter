@@ -44,6 +44,18 @@ module.exports = {
       "type": "confirm",
       "message": "Install vue-router?"
     },
+    "vuex": {
+      "type": "confirm",
+      "message": "Install vuex?"
+    },
+    "vuetify": {
+      "type": "confirm",
+      "message": "Install vuetify?"
+    },
+    "axios": {
+      "type": "confirm",
+      "message": "Install axios?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"

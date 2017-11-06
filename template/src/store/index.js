@@ -1,16 +1,17 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import app from './app'
+{{#vuex}}import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import app from './app'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 // import modules/plugins here 
 
-Vue.use(Vuex)
+Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 const store = new Vuex.Store({
   strict: true,
   // plugins: [logger],
   modules: {
-    app
+    app{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
 })
 
-export default store
+export default store{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuex}}
