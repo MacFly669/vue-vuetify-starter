@@ -7,8 +7,23 @@ import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
 import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
+{{#vuex}}
+import store from './store'{{#if_eq lintConfig "vuex"}};{{/if_eq}}
+{{/vuex}}
+
+{{#axios}}
+import axios from 'axios'{{#if_eq lintConfig "axios"}};{{/if_eq}}
+{{/axios}}
+{{#vuetify}}
+import Vuetify from 'vuetify'{{#if_eq lintConfig "vuetify"}};{{/if_eq}}
+{{/vuetify}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+Vue.use(Vuetify){{#if_eq lintConfig "vuetify"}};{{/if_eq}}
+{{#axios}}
+Vue.prototype.$_axios = axios{{#if_eq lintConfig "axios"}};{{/if_eq}}
+{{/axios}}
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,6 +31,9 @@ new Vue({
   {{#router}}
   router,
   {{/router}}
+  {{#vuex}}
+  store,
+  {{/vuex}}
   {{#if_eq build "runtime"}}
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
