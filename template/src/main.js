@@ -17,11 +17,13 @@ import axios from 'axios'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#vuetify}}
 import Vuetify from 'vuetify'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuetify}}
+import EventBus from './event'
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 Vue.use(Vuetify){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#axios}}
+Vue.prototype.$_bus = EventBus
 Vue.prototype.$_axios = axios{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/axios}}
 

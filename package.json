@@ -9,10 +9,5 @@
   },
   "devDependencies": {
     "vue-cli": "^2.8.1"
-  },
-  "dependencies": {
-    "axios": "^0.17.0",
-    "vuetify": "^0.16.9",
-    "vuex": "^3.0.1"
   }
 }
