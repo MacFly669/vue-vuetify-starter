@@ -1,33 +1,29 @@
 <template>
 {{#vuetify}}
-<v-layout>
-  <v-flex xs12>
+<v-container>
+ <v-layout row wrap align-center>
+  <v-flex xs12 text-xs-center>
       <h2>Vue webpack with router - vuex - vuetify - axios</h2>
-        <p>
-          A starter Vue webpack template with vuetify, store and axios
-        </p>
-  </v-flex>
-  <v-flex xs12>
-      <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
+        <p>A starter Vue webpack template with vuetify, store and axios</p>
+    </v-flex>
+    <v-flex xs12 md6 offset-md3>
       <v-card>
-        <v-card-media src="/static/doc-images/cards/desert.jpg" height="200px">
+        <v-card-media src="http://lorempicsum.com/futurama/627/200/3" width="627px" height="200px">
         </v-card-media>
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">Kangaroo Valley Safari</h3>
-            <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+            <h3 class="headline mb-0">VueJS rocks !</h3>
+            <div>Vue webpack starter boilerplate <br>Vuetify, Store, Route, Axios ...</div>
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat color="orange">Share</v-btn>
+          <v-btn flat color="orange">Enjoy</v-btn>
           <v-btn flat color="orange">Explore</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
-  </v-layout>
-  </v-flex>
-</v-layout>
+</v-layout> 
+</v-container>
 {{else}}
   <div class="hello">
     <h1>\{{ msg }}</h1>

@@ -97,6 +97,8 @@
     </v-toolbar>
  <main>
     <v-content>
+          <span><img src="./assets/logo.png" alt="logo"></span>
+          <span><img src="./assets/v.png" alt="vuetify"></span>
       <v-container fluid>
         {{else}}
         <div id="app">
@@ -112,7 +114,9 @@
       </v-container>
     </v-content>
  </main>
-<v-footer app></v-footer>
+<v-footer app>
+  <span>&copy; {{copyDate}}</span>
+</v-footer>
 </v-container>
 </v-app>
 {{else}}
@@ -136,6 +140,9 @@ export default {
     fixed: true,
     miniVariant: false
   }),
+  computed: {
+    copyDate: () => { return new Date().getFullYear() }
+  },
   methods: {
     routerBack () { this.$router.back() },
     routerForward () { this.$router.forward() }
