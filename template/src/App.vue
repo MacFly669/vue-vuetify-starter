@@ -113,6 +113,8 @@
     </v-content>
  </main>
 <v-footer app></v-footer>
+</v-container>
+</v-app>
 {{else}}
 </div>
 {{/vuetify}}

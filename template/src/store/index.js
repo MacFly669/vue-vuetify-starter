@@ -1,7 +1,7 @@
 {{#vuex}}import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import Vuex from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import app from './app'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-// import modules/plugins here 
+// import modules/plugins here
 
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
