@@ -1,105 +1,46 @@
 <template>
 {{#vuetify}}
 <v-app id="app" dark>
-  
-    <v-container fluid grid-list-xs>
-        <v-layout row wrap>
-            <v-flex xs12 sm5 offset-sm3>
-              
-                <v-snackbar
-                        :timeout="3000"
-                        v-model="snackbar"
-                        :top="true"
-                >
-                    {{ text }}
-                </v-snackbar>
-            </v-flex>
-        </v-layout>
-        <v-navigation-drawer
-                fixed
-                overflow
-                app
-                persistent
-                :mini-variant="miniVariant"
-                :clipped="clipped"
-                v-model="drawer"
-                enable-resize-watcher
-        >
-            <v-list class="mt-5 bouton">
-                <v-list-tile
-                class="menuAnim"
-                v-for="item in menuItems"
-                :key="item.title"
-                router
-                :to="item.link"
-                ripple
-                >
-                <v-list-tile-action>
-                      <v-icon>{{ item.icon }}</v-icon>
-                </v-list-tile-action>
-                    <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-    <v-toolbar  app :clipped-left="clipped" :fixed="fixed" light class="primary" height="50" >
-        <v-toolbar-side-icon @click.stop="drawer = !  drawer" dark></v-toolbar-side-icon>
-        <v-btn icon dark @click.stop="miniVariant = !miniVariant">
-            <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-        </v-btn>
-        <v-btn icon dark @click.stop="clipped = !clipped" >
-            <v-icon>web</v-icon>
-        </v-btn>
-        <v-btn icon dark @click.stop="fixed = !fixed" >
-            <v-icon dark>remove</v-icon>
-        </v-btn>
-        <v-btn icon dark>
-            <v-icon dark>group</v-icon>
-        </v-btn>
-        <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer" class="xs2"><v-icon dark class="">home</v-icon></router-link>
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-tooltip
-        placement="top"
-        >
-          <v-btn slot="activator" flat icon @click="routerBack">
-          <v-icon dark>arrow_left</v-icon>
-          </v-btn>
-          <span>{{ 'Go back' }}</span>
-        </v-tooltip>
-        
-          <v-btn dark flat icon @click="routerForward">
-          <v-icon dark>arrow_right</v-icon>
-          </v-btn>
-        <v-toolbar-items class="hidden-lg-and-down top-menu">
-            <v-btn
-            light
-            flat
-            v-for="item in menuItems"
-            :key="item.title"
-            router
-            :to="item.link"
-            @click="item.action || null"
-            class="left-btn white--text"
-            >
-            <v-icon left dark>{{ item.icon }}</v-icon>
-                {{ item.title }}
-            </v-btn>
-        </v-toolbar-items>
-        <v-toolbar-items class="hidden-xs-only" @click.prevent.stop="onLogout">
-            <v-btn flat @click.prevent.stop="setLanguage('fr')">
-                <img src="./assets/locale/fr.jpg" alt="" width="30px">
-            </v-btn>
-            <v-btn flat @click.prevent.stop="setLanguage('en')">
-                <img src="./assets/locale/en.jpg" alt="" width="30px">
-            </v-btn>
-        </v-toolbar-items>
+   <v-navigation-drawer
+      persistent
+      v-model="drawer"
+      enable-resize-watcher
+      app
+    >
+      <v-list dense>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Contact</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar color="indigo" dark fixed app>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>Application</v-toolbar-title>
     </v-toolbar>
- <main>
-    <v-content>
-          <span><img src="./assets/logo.png" alt="logo"></span>
-          <span><img src="./assets/v.png" alt="vuetify"></span>
-      <v-container fluid>
+    <main>
+      <v-content>
+        <v-container fluid fill-height>
+          <v-layout
+            justify-center
+            align-center
+          >
+            <v-flex xs12 text-xs-center>
+              <span><img src="./assets/logo.png" alt="logo"></span>
+              <span><img src="./assets/v.png" alt="vuetify"></span>
+            </v-flex>
         {{else}}
         <div id="app">
           <span><img src="./assets/logo.png" alt="logo"></span>
@@ -111,13 +52,13 @@
         <HelloWorld/>
         {{/router}}
         {{#vuetify}}
-      </v-container>
-    </v-content>
- </main>
-<v-footer app>
-  <span>&copy; {{copyDate}}</span>
-</v-footer>
-</v-container>
+          </v-layout>
+            <v-footer app>
+              <span>&copy; {{copyDate}}</span>
+            </v-footer>          
+        </v-container>
+      </v-content>
+    </main>
 </v-app>
 {{else}}
 </div>
