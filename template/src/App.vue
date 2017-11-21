@@ -60,10 +60,10 @@ import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{
 
 {{/unless}}
 export default {
-  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  name: 'app'{{#unless router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
   components: {
     HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/unless}}{{/router}},
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/unless}},
   data: () => ({
     drawer: true,
     clipped: false,
