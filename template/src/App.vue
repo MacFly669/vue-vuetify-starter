@@ -2,7 +2,7 @@
 {{#vuetify}}
 <v-app id="app" dark>
    <v-navigation-drawer
-git       fixed
+      fixed
       clipped
       v-model="drawer"
       enable-resize-watcher
@@ -31,10 +31,8 @@ git       fixed
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-toolbar>
-    <main>
       <v-content>
         <v-container fluid fill-height>
-
         {{else}}
         <div id="app">
         {{/vuetify}}
@@ -65,7 +63,7 @@ export default {
   name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
   components: {
     HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#unless vuetify}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/unless}}{{/router}}{{#vuetify}},
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/unless}}{{/router}},
   data: () => ({
     drawer: true,
     clipped: false,
@@ -76,9 +74,11 @@ export default {
     copyDate: () => { return new Date().getFullYear() }
   },
   methods: {
+    {{#unless router}}
     routerBack () { this.$router.back() },
     routerForward () { this.$router.forward() }
-  }{{/vuetify}}
+    {{/unless}}
+  }
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
