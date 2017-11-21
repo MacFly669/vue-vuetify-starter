@@ -2,7 +2,7 @@
 {{#vuetify}}
 <v-app id="app" dark>
    <v-navigation-drawer
-      fixed
+git       fixed
       clipped
       v-model="drawer"
       enable-resize-watcher
@@ -34,8 +34,16 @@
     <main>
       <v-content>
         <v-container fluid fill-height>
+
         {{else}}
         <div id="app">
+        {{/vuetify}}
+        {{#router}}
+        <router-view></router-view>
+
+        {{else}}
+        <div id="app">
+
         {{/vuetify}}
         {{#router}}
         <router-view></router-view>
@@ -49,6 +57,12 @@
     <v-footer app>
     <span>&copy; {{copyDate}}</span>
     </v-footer>    
+          </v-layout>
+            <v-footer app>
+              <span>&copy; {{copyDate}}</span>
+            </v-footer>          
+        </v-container>
+      </v-content>
 </v-app>
 {{else}}
 </div>
