@@ -46,16 +46,10 @@ git       fixed
         {{#vuetify}}
         </v-container>
       </v-content>
-    </main>
-    <v-footer app>
-    <span>&copy; {{copyDate}}</span>
-    </v-footer>    
-          </v-layout>
             <v-footer app>
               <span>&copy; {{copyDate}}</span>
             </v-footer>          
         </v-container>
-      </v-content>
 </v-app>
 {{else}}
 </div>
