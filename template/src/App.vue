@@ -40,13 +40,6 @@ git       fixed
         {{/vuetify}}
         {{#router}}
         <router-view></router-view>
-
-        {{else}}
-        <div id="app">
-
-        {{/vuetify}}
-        {{#router}}
-        <router-view></router-view>
         {{else}}
         <HelloWorld/>
         {{/router}}
