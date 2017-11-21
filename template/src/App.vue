@@ -2,13 +2,14 @@
 {{#vuetify}}
 <v-app id="app" dark>
    <v-navigation-drawer
-      persistent
+      fixed
+      clipped
       v-model="drawer"
       enable-resize-watcher
       app
     >
       <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile>
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
@@ -16,7 +17,7 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="">
+        <v-list-tile>
           <v-list-tile-action>
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
@@ -33,32 +34,21 @@
     <main>
       <v-content>
         <v-container fluid fill-height>
-          <v-layout
-            justify-center
-            align-center
-          >
-            <v-flex xs12 text-xs-center>
-              <span><img src="./assets/logo.png" alt="logo"></span>
-              <span><img src="./assets/v.png" alt="vuetify"></span>
-            </v-flex>
         {{else}}
         <div id="app">
-          <span><img src="./assets/logo.png" alt="logo"></span>
-          <span><img src="./assets/v.png" alt="vuetify"></span>
         {{/vuetify}}
         {{#router}}
-        <router-view/>
+        <router-view></router-view>
         {{else}}
         <HelloWorld/>
         {{/router}}
         {{#vuetify}}
-          </v-layout>
-            <v-footer app>
-              <span>&copy; {{copyDate}}</span>
-            </v-footer>          
         </v-container>
       </v-content>
     </main>
+    <v-footer app>
+    <span>&copy; {{copyDate}}</span>
+    </v-footer>    
 </v-app>
 {{else}}
 </div>
@@ -92,6 +82,8 @@ export default {
 </script>
 
 <style>
+{{#vuetify}}
+{{else}}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -100,4 +92,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+{{/vuetify}}
 </style>

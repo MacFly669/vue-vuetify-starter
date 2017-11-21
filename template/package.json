@@ -17,7 +17,7 @@
     "vue": "^2.5.2"{{#router}},
     "vue-router": "^3.0.1"{{/router}}{{#vuex}},
     "vuex": "^3.0.1"{{/vuex}}{{#vuetify}},
-    "vuetify": "^0.16.9"{{/vuetify}}{{#axios}},
+    "vuetify": "^0.17.1"{{/vuetify}}{{#axios}},
     "axios": "^0.17.0"{{/axios}}
   },
   "devDependencies": {
